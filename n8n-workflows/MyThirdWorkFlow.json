@@ -1,0 +1,53 @@
+{
+  "name": "MyThirdWorkFlow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -432,
+        -48
+      ],
+      "id": "08b402b7-b8f2-4e77-a70a-43ff39d49d32",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{json: {message: \"Hello from n8n\"}}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -224,
+        -48
+      ],
+      "id": "95997d15-a71d-4076-a7d0-044dde1e1b87",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "8379ba88-4fa9-4beb-9316-610c80665b27",
+  "meta": {
+    "instanceId": "5e598a0a9eec5bf98fcac711c6e26d106ea9b16fa93887c42fc185b802ae403e"
+  },
+  "id": "ZGc3ZK2auLKzDt2i",
+  "tags": []
+}

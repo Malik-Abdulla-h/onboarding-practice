@@ -1,0 +1,98 @@
+{
+  "name": "MySecondWorkflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "5e99a3c4-35ac-496b-95e0-da2b7083964a",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -432,
+        -16
+      ],
+      "id": "f3c8f99f-4c97-4ffe-8f31-b1175febf2e9",
+      "name": "Webhook",
+      "webhookId": "5e99a3c4-35ac-496b-95e0-da2b7083964a"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1f3d0a82-89e9-483b-a33f-1b18bacf02af",
+              "name": "Name",
+              "value": "John",
+              "type": "string"
+            },
+            {
+              "id": "7c226597-cb7e-4721-8545-0588b59e6232",
+              "name": "Status",
+              "value": "Active",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -224,
+        -16
+      ],
+      "id": "7655378a-e6cb-40fc-8ff0-d2f518366914",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -16,
+        -16
+      ],
+      "id": "039ddf41-5204-4be7-a973-9715c6a72b69",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "908cb4ed-7b99-4b29-9574-fe80439075dd",
+  "meta": {
+    "instanceId": "5e598a0a9eec5bf98fcac711c6e26d106ea9b16fa93887c42fc185b802ae403e"
+  },
+  "id": "NT6PrHjncuf2yhO6",
+  "tags": []
+}
